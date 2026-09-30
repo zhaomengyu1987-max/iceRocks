@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dyqjfp4onx3g"]
+
+[ext_resource type="Shader" uid="uid://bgeaofxy8la24" path="res://shaders/ice_surface.gdshader" id="1_acbhp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_acbhp")
+shader_parameter/ice_clear = Color(0.36, 0.56, 0.82, 1)
+shader_parameter/ice_milky = Color(0.56, 0.71, 0.88, 1)
+shader_parameter/ice_deep = Color(0.02, 0.1, 0.28, 1)
+shader_parameter/ice_roughness = 0.16
+shader_parameter/frost_amount = 0.2
+shader_parameter/dust_color = Color(0.16, 0.152, 0.148, 1)
+shader_parameter/dust_color_warm = Color(0.27, 0.25, 0.23, 1)
+shader_parameter/dust_amount = 0.5
+shader_parameter/bump_strength = 0.02
+shader_parameter/crack_depth = 1.0
+shader_parameter/crack_amount = 0.8
+shader_parameter/sparkle = 0.6
+shader_parameter/seed = 11.3

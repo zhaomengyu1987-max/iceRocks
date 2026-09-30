@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cv2sirv347oq8"]
+
+[ext_resource type="Material" uid="uid://dyqjfp4onx3g" path="res://materials/ice_surface_material.tres" id="1_b6tue"]
+[ext_resource type="Script" uid="uid://cn1jucxje3x8o" path="res://scripts/quality_manager.gd" id="1_s3je5"]
+[ext_resource type="ArrayMesh" path="res://meshes/ice_nucleus_mesh.res" id="2_s3je5"]
+[ext_resource type="Script" uid="uid://b3o4uo6gbckip" path="res://scripts/ice_nucleus.gd" id="3_3aw0n"]
+[ext_resource type="Environment" uid="uid://dyaku6p6153n6" path="res://environments/space_environment.tres" id="4_b6tue"]
+[ext_resource type="Script" uid="uid://dixwvdnswl8wf" path="res://scripts/orbit_camera.gd" id="6_3aw0n"]
+[ext_resource type="Script" uid="uid://dt2rxwf1b7i7m" path="res://scripts/settings_ui.gd" id="7_pp74f"]
+
+[node name="IceComet" type="Node3D" unique_id=1041995806]
+script = ExtResource("1_s3je5")
+
+[node name="Nucleus" type="MeshInstance3D" parent="." unique_id=1787620892]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+material_override = ExtResource("1_b6tue")
+mesh = ExtResource("2_s3je5")
+script = ExtResource("3_3aw0n")
+resolution = 128
+status = "baked: res 128, craters 3, cracks 1 (min 5 cells), rim min 2.5, ridge 3 oct, smooth 2"
+crater_bands = 3
+crack_layers = 1
+fine_amount = 0.002
+crack_min_edges = 5.0
+rim_min_edges = 2.5
+ridge_octaves = 3
+normal_smooth_iters = 1
+facet_planes = 24
+facet_offset_min = 0.7
+facet_offset_max = 0.91
+facet_round = 0.008
+lump_amount = 0.12
+terrace_amount = 0.5
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=471929716]
+transform = Transform3D(0.37460664, -0.12903906, 0.91816056, 0, 0.99026805, 0.1391731, -0.92718387, -0.05213517, 0.37096098, 0, 0, 0)
+light_energy = 1.6
+shadow_enabled = true
+directional_shadow_max_distance = 800.0
+
+[node name="EarthshineFill" type="DirectionalLight3D" parent="." unique_id=810755145]
+transform = Transform3D(-0.76604444, -0.21984631, -0.6040228, 0, 0.9396926, -0.34202012, 0.64278764, -0.26200262, -0.7198463, 0, 0, 0)
+light_color = Color(0.56078434, 0.7058824, 1, 1)
+light_energy = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2074360074]
+environment = ExtResource("4_b6tue")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=642900954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 330)
+current = true
+fov = 38.0
+near = 0.5
+far = 100000.0
+script = ExtResource("6_3aw0n")
+
+[node name="SettingsUI" type="CanvasLayer" parent="." unique_id=205703585]
+script = ExtResource("7_pp74f")

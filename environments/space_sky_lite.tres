@@ -1,0 +1,7 @@
+[gd_resource type="Sky" format=3 uid="uid://blsbqes180qw"]
+
+[ext_resource type="Material" uid="uid://bcvsw0jul7o7t" path="res://materials/space_sky_lite_material.tres" id="1_bk3o6"]
+
+[resource]
+sky_material = ExtResource("1_bk3o6")
+radiance_size = 0

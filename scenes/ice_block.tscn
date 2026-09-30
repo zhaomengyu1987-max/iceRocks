@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://5mckdu16g05q"]
+
+[ext_resource type="Material" uid="uid://8f5rubfhse73" path="res://materials/ice_block_material.tres" id="1_tbxin"]
+[ext_resource type="Script" uid="uid://bvsw3wxogei2l" path="res://scripts/ice_block_builder.gd" id="2_vnvna"]
+[ext_resource type="Environment" uid="uid://ljmor351ymrv" path="res://environments/ice_block_env.tres" id="3_q7xnk"]
+[ext_resource type="Script" uid="uid://gts670ns4i4c" path="res://scripts/ice_block_camera.gd" id="4_itc8v"]
+[ext_resource type="Environment" uid="uid://dyaku6p6153n6" path="res://environments/space_environment.tres" id="5_space"]
+
+[node name="IceBlock" type="Node3D" unique_id=1220220483]
+
+[node name="Block" type="MeshInstance3D" parent="." unique_id=1041765391]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+material_override = ExtResource("1_tbxin")
+script = ExtResource("2_vnvna")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.37460664, -0.12903906, 0.91816056, 0, 0.99026805, 0.1391731, -0.92718387, -0.05213517, 0.37096098, 0, 0, 0)
+light_energy = 1.3
+shadow_enabled = true
+directional_shadow_max_distance = 800.0
+
+[node name="EarthshineFill" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.76604444, -0.21984631, -0.6040228, 0, 0.9396926, -0.34202012, 0.64278764, -0.26200262, -0.7198463, 0, 0, 0)
+light_color = Color(0.56078434, 0.7058824, 1, 1)
+light_energy = 0.18
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=433873537]
+environment = ExtResource("5_space")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=94860481]
+fov = 50.0
+script = ExtResource("4_itc8v")

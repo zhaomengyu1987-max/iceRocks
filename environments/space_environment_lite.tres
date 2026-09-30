@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=3 uid="uid://bl1rjelgn08l7"]
+
+[ext_resource type="Sky" uid="uid://blsbqes180qw" path="res://environments/space_sky_lite.tres" id="1_yxyrc"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_yxyrc")
+ambient_light_source = 2
+ambient_light_color = Color(0.101960786, 0.16470589, 0.2901961, 1)
+ambient_light_energy = 0.7
+reflected_light_source = 1
+tonemap_mode = 2
+tonemap_exposure = 1.15
+tonemap_white = 6.0

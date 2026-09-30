@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://5auwtkwg560k"]
+
+[ext_resource type="Material" path="res://ice_surface_material.tres" id="1_b6tue"]
+[ext_resource type="Script" path="res://quality_manager.gd" id="1_s3je5"]
+[ext_resource type="ArrayMesh" path="res://ice_nucleus_mesh.res" id="2_s3je5"]
+[ext_resource type="Script" path="res://ice_nucleus.gd" id="3_3aw0n"]
+[ext_resource type="Environment" path="res://space_environment.tres" id="4_b6tue"]
+[ext_resource type="Script" path="res://orbit_camera.gd" id="6_3aw0n"]
+[ext_resource type="Script" path="res://settings_ui.gd" id="7_pp74f"]
+
+[node name="IceComet" type="Node3D" unique_id=1041995806]
+script = ExtResource("1_s3je5")
+
+[node name="Nucleus" type="MeshInstance3D" parent="." unique_id=1787620892]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+material_override = ExtResource("1_b6tue")
+mesh = ExtResource("2_s3je5")
+script = ExtResource("3_3aw0n")
+status = "done 303750 verts, 23849 ms (save=0)"
+block_amount = null
+mesh_path = null
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=471929716]
+transform = Transform3D(0.37460664, -0.12903906, 0.91816056, 0, 0.99026805, 0.1391731, -0.92718387, -0.05213517, 0.37096098, 0, 0, 0)
+light_energy = 1.3
+shadow_enabled = true
+directional_shadow_max_distance = 800.0
+
+[node name="EarthshineFill" type="DirectionalLight3D" parent="." unique_id=810755145]
+transform = Transform3D(-0.76604444, -0.21984631, -0.6040228, 0, 0.9396926, -0.34202012, 0.64278764, -0.26200262, -0.7198463, 0, 0, 0)
+light_color = Color(0.56078434, 0.7058824, 1, 1)
+light_energy = 0.18
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2074360074]
+environment = ExtResource("4_b6tue")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=642900954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 330)
+current = true
+fov = 38.0
+near = 0.5
+far = 100000.0
+script = ExtResource("6_3aw0n")
+
+[node name="SettingsUI" type="CanvasLayer" parent="." unique_id=205703585]
+script = ExtResource("7_pp74f")

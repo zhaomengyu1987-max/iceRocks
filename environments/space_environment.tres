@@ -1,0 +1,21 @@
+[gd_resource type="Environment" format=3 uid="uid://dyaku6p6153n6"]
+
+[ext_resource type="Sky" uid="uid://273jjoel6sub" path="res://environments/space_sky.tres" id="1_setqa"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_setqa")
+ambient_light_source = 2
+ambient_light_color = Color(0.101960786, 0.16470589, 0.2901961, 1)
+ambient_light_energy = 0.28
+reflected_light_source = 1
+tonemap_mode = 2
+tonemap_exposure = 0.9
+tonemap_white = 6.0
+ssao_enabled = true
+ssao_radius = 4.0
+ssao_intensity = 2.5
+glow_enabled = true
+glow_intensity = 0.1
+glow_bloom = 0.02
+glow_hdr_threshold = 1.4

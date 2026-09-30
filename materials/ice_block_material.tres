@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://8f5rubfhse73"]
+
+[ext_resource type="Shader" uid="uid://cpyx8r85rvjvf" path="res://shaders/ice_block.gdshader" id="1_0f528"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0f528")
+shader_parameter/ice_deep = Color(0.015, 0.09, 0.22, 1)
+shader_parameter/ice_mid = Color(0.45, 0.72, 0.94, 1)
+shader_parameter/ice_milky = Color(0.88, 0.94, 1, 1)
+shader_parameter/ice_roughness = 0.09
+shader_parameter/thickness_contrast = 0.55
+shader_parameter/frost_color = Color(0.93, 0.96, 1, 1)
+shader_parameter/frost_amount = 0.4
+shader_parameter/fracture_amount = 0.75
+shader_parameter/fracture_depth = 1.0
+shader_parameter/surface_crack_amount = 0.5
+shader_parameter/bump_strength = 0.006
+shader_parameter/sparkle = 0.5
+shader_parameter/seed = 4.7

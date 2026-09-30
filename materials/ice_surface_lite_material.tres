@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cjd7uir0up6ac"]
+
+[ext_resource type="Shader" uid="uid://rep3mc1wd11t" path="res://shaders/ice_surface_lite.gdshader" id="1_j286i"]
+[ext_resource type="Texture2D" path="res://tex/ice_detail_a.res" id="2_lnsuh"]
+[ext_resource type="Texture2D" path="res://tex/ice_detail_n.res" id="3_31838"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_j286i")
+shader_parameter/tex_a = ExtResource("2_lnsuh")
+shader_parameter/tex_n = ExtResource("3_31838")
+shader_parameter/ice_clear = Color(0.42, 0.68, 0.95, 1)
+shader_parameter/ice_milky = Color(0.9, 0.95, 1, 1)
+shader_parameter/ice_deep = Color(0.02, 0.1, 0.28, 1)
+shader_parameter/ice_roughness = 0.16
+shader_parameter/frost_amount = 0.2
+shader_parameter/dust_color = Color(0.29, 0.24, 0.2, 1)
+shader_parameter/dust_color_warm = Color(0.48, 0.35, 0.24, 1)
+shader_parameter/dust_amount = 0.38
+shader_parameter/bump_strength = 0.6
+shader_parameter/crack_amount = 1.0
+shader_parameter/seed = 11.3
